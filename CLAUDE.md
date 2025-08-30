@@ -2,6 +2,8 @@
 
 - USE `pnpm` as a package manager. Don't use `npm`.
 - Use `pnpx` to run a command.
+- Follow @README.md for the technical stacks etc.
+- Follow @課題 開発_2412.md for requirements.
 
 ## test
 
