@@ -5,6 +5,10 @@
 - Follow @README.md for the technical stacks etc.
 - Follow @課題 開発_2412.md for requirements.
 
+### Format/Lint
+
+- Minimize use `eslint-disable` to maximize the power of types.
+
 ## test
 
 - Test files are usually located in the same folder with the implementation.
