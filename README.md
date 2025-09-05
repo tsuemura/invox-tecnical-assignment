@@ -35,6 +35,12 @@ pnpm install
 pnpm run db:setup
 ```
 
+### 環境変数の準備
+
+```
+cp .env.example .env
+```
+
 ## テスト
 
 ### モックサーバーの起動
