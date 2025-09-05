@@ -30,6 +30,13 @@ brew install pnpm
 pnpm install
 ```
 
+### データベースのセットアップ
+
+```bash
+pnpm run db:setup
+```
+
+
 ### モックサーバーの起動
 
 ```bash

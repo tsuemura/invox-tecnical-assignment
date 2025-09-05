@@ -18,7 +18,10 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "server:mock": "ts-node src/mock-server.ts",
-    "analyze-image": "ts-node scripts/analyze-image.ts"
+    "analyze-image": "ts-node scripts/analyze-image.ts",
+    "db:setup": "pnpm run db:generate && pnpm run db:migrate",
+    "db:generate": "pnpx prisma generate",
+    "db:migrate": "pnpx prisma migrate dev"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
