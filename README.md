@@ -29,16 +29,16 @@ brew install pnpm
 pnpm install
 ```
 
-### データベースのセットアップ
-
-```bash
-pnpm run db:setup
-```
-
 ### 環境変数の準備
 
 ```
 cp .env.example .env
+```
+
+### データベースのセットアップ
+
+```bash
+pnpm run db:setup
 ```
 
 ## テスト
