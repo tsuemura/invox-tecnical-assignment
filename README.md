@@ -39,7 +39,27 @@ pnpm server:mock
 ### モックサーバーへのテスト送信
 
 ```bash
-pnpm run analyze-image
+# 成功
+pnpm run analyze-image /image/d03f1d36ca69348c51aa/c413eac329e1c0d03/success.jpg
+
+# 失敗
+pnpm run analyze-image /image/d03f1d36ca69348c51aa/c413eac329e1c0d03/fail.jpg
+
+# 404エラー
+pnpm run analyze-image /image/d03f1d36ca69348c51aa/c413eac329e1c0d03/notexist.jpg
+
+# 500エラー
+pnpm run analyze-image /image/d03f1d36ca69348c51aa/c413eac329e1c0d03/server-error.jpg
+
+# タイムアウト
+pnpm run analyze-image /image/d03f1d36ca69348c51aa/c413eac329e1c0d03/timeout.jpg
+```
+
+## 実サーバーへの送信
+
+```bash
+# 環境変数でAPIのURLを指定（データベースに保存されます）
+AI_API_BASE_URL=https://api.example.com pnpm run analyze-image /path/to/image.jpg
 ```
 
 ## テスト
