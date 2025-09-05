@@ -10,7 +10,6 @@ APIレスポンスの仕様を以下のように補完している。
 
 - レスポンスコードの記述がないため、有効・無効系のHTTPステータスコードは `200-299` を返すものとしている。
 - `200-299` 以外のステータスコードは例外をスローし、データベースには記録しないようにしている。
--
 
 ## セットアップ
 
@@ -36,6 +35,7 @@ pnpm install
 pnpm run db:setup
 ```
 
+## テスト
 
 ### モックサーバーの起動
 
@@ -69,7 +69,7 @@ pnpm run analyze-image /image/d03f1d36ca69348c51aa/c413eac329e1c0d03/timeout.jpg
 AI_API_BASE_URL=https://api.example.com pnpm run analyze-image /path/to/image.jpg
 ```
 
-## テスト
+## 自動テスト
 
 ### テスト戦略
 
@@ -88,16 +88,3 @@ AI_API_BASE_URL=https://api.example.com pnpm run analyze-image /path/to/image.jp
 サーバーエラー | 500 | `/image/d03f1d36ca69348c51aa/c413eac329e1c0d03/server-error.jpg`|なし
 タイムアウト | - | `/image/d03f1d36ca69348c51aa/c413eac329e1c0d03/timeout.jpg`|なし
 
-
-## 技術スタック
-
-- WAF: `NestJS`
-- ORM: `Prisma`
-- DB: `SQLite`
-
-
-## 備考
-
-- `Python、Java、JavaScript、PHPのいずれかの言語でフレームワークを利用してください` という要件から、フルスタックWebアプリケーションフレームワークでの開発能力を見たいのではと考え、[NestJS](https://nestjs.com/)を利用した。JS/TSだと他に[Blitz.js](https://blitzjs.com/)なども考えられる。ただ単に実装するだけなら[Bun](https://bun.com/)の組み込みライブラリだけで組んだほうが早い。
-- `TypeORM`ではなく`Prisma`にしたのはただの好みだが、前者は[一時期存続が危ぶまれていた](https://scrapbox.io/uki00a/TypeORM%E3%81%AE%E7%8F%BE%E5%9C%A8%E3%81%AE%E5%8B%95%E5%90%91%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_(2024%E5%B9%B4))との話もあるらしい。
-- 採点の簡単さを優先し、データベースには`SQLite`を使っている。
